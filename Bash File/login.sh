@@ -2,8 +2,7 @@
 
 clear
 
-getData=$(cat db.txt)
-rawData=($(echo $getData | awk -F '|' '{print $1,$2}'))
+rawData=($(cat db.txt | awk -F '|' '{print $1,$2}'))
 
 echo ""
 read -p " [#] Input Username: " username
