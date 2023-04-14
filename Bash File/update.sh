@@ -5,6 +5,8 @@ clearScreen() {
 }
 
 main() {
+  clearScreen
+
   echo ""
   read -p " [#] Input New Username: " username
   read -p " [#] Input New Password: " password
