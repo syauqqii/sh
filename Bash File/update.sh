@@ -1,12 +1,18 @@
 #!/bin/bash
 
-clear
+clearScreen() {
+  clear
+}
 
-echo ""
-read -p " [#] Input New Username: " username
-read -p " [#] Input New Password: " password
+main() {
+  echo ""
+  read -p " [#] Input New Username: " username
+  read -p " [#] Input New Password: " password
 
-userEncrypt=$(echo -n $username | md5sum | awk '{print $1}')
-passEncrypt=$(echo -n $password | md5sum | awk '{print $1}')
+  userEncrypt=$(echo -n $username | md5sum | awk '{print $1}')
+  passEncrypt=$(echo -n $password | md5sum | awk '{print $1}')
 
-echo "${userEncrypt}|${passEncrypt}" > db.txt
+  echo "${userEncrypt}|${passEncrypt}" > db.txt
+}
+
+main
