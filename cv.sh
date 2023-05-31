@@ -1,2 +1,3 @@
 read -p "text: " input
-echo -n "$input" | od -A n -t x1 |sed 's/ /\\x/g'
+enc=$(echo "$input" | od -A n -t x1 | sed 's/ /\\x/g')
+echo "$enc"
